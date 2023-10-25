@@ -1,7 +1,6 @@
 # initoverlayfs
 
-**An innovative solution for generating initramfs images** focused in speed up Linux operating system boot time,  
-suitable for both **critical and non-critical** environments.
+**An innovative solution for generating initramfs images** focused on speeding the Linux operating system boot time. `initoverlayfs` is suitable for both **critical** and **non-critical** environments.
 
 - [Why use initoverlayfs to generate initramfs images?](#why-use-initoverlayfs-to-generate-initramfs-images-)
 - [Installation](#installation)
@@ -16,12 +15,13 @@ An initramfs (Initial RAM File System) image is a fundamental component in prepa
 
 Typically, generating an initramfs involves assembling all available kernel modules and necessary files to boot and support any hardware using the specific Linux kernel version XYZ.  
 
-However, this conventional approach presents a significant challenge: loading such a voluminous image into memory during boot is time-consuming and can be problematic in critical scenarios where time to boot is critical. Edge devices commonly need to boot as quickly as possible such as healthcare, automotive and aviation.
+However, this conventional approach presents a significant challenge: loading such a voluminous image into memory during boot is time-consuming and can be problematic in critical time to boot scenarios. Edge devices commonly need to boot as quickly as possible such as healthcare, automotive and aviation.
 
-Conversely, the initoverlayfs approach proposes a solution: "**dividing the initramfs image into two parts**." 
+Conversely, the initoverlayfs approach proposes a solution: "**dividing the initramfs image into two parts**."
 
-This division entails segregating the initramfs image into two distinct components.
-The first component (initramfs) houses only the kernel modules and udev-rules necessary for storage, responsible for bringing up the storage device containing initoverlayfs quickly. Subsequently, it mounts and switches to the second component (initoverlayfs), containing all additional kernel modules and essential files required to support the Linux boot process.
+1. A small traditional component (initramfs) which containes only the kernel modules and udev-rules necessary for mounting storage. This initramfs mounts the storage device containing the second component (initoverlayfs) quickly.
+
+2 The second component (initoverlayfs), contains the remaining kernel modules and essential files required to support the Linux boot process.
 
 This innovative approach serves to diminish the size of the initramfs image, thus enhancing the speed of the boot process.
 

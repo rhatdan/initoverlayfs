@@ -47,7 +47,7 @@ install -D -m644 lib/dracut/modules.d/81initoverlayfs/module-setup.sh $RPM_BUILD
 * Fri Oct 13 2023 Eric Curtin <ecurtin@redhat.com> - 0.91-1
 - Rm custom tokenizer, replace with strtok.
 * Thu Oct 12 2023 Eric Curtin <ecurtin@redhat.com> - 0.9-1
-- Change to bls_parser, split into separate files. Remove grub dependancy.
+- Change to bls_parser, split into separate files. Remove grub dependency.
 * Thu Oct 5 2023 Eric Curtin <ecurtin@redhat.com> - 0.8-1
 - Change to initoverlayfs.bootfs and initoverlay.bootfstype
 * Wed Oct 4 2023 Eric Curtin <ecurtin@redhat.com> - 0.7-1
